@@ -1,21 +1,29 @@
+<!DOCTYPE html>
 <html lang="en">
-<link href='https://fonts.googleapis.com/css?family=Lexend Deca' rel='stylesheet'>
-<head>
-  <link rel="stylesheet" href="./style.css">
-</head>
+  <head>
+    <link href='https://fonts.googleapis.com/css?family=Lexend Deca' rel='stylesheet'>
+    <link rel="stylesheet" href="template.css">
+    <link rel="stylesheet" href="./style.css">
+  </head>
+
   <body>
-  <div class="logo">
-    <img id="logoimg" src="assets/Logo.svg">
-    <span id="title">MoodyMind</span>
-  </div>
-    <div style="text-align: center;" id="journalentry">
-      <h1 style="color: white">Tell me about it.</h1>
-      <label for="mhentry"></label><textarea id="mhentry"></textarea><br><br>
-    <input type="submit" class="button" id="submitButton" value="Submit">
-      <input type="submit" class="button" id="retrieveButton" value="Retrieve">
-    <script type="module" src="./src/index.js"></script>
+    <div class="container">
+
+      <div class="logo">
+        <img id="logoimg" src="assets/Logo.svg">
+        <span id="title">MoodyMind</span>
+      </div>
+
+      <div style="text-align: center;" id="journalentry">
+        <p id="text-prompt" style="color: white">Tell me about it.</h1>
+        <label for="mhentry"></label><textarea id="mhentry"></textarea><br><br>
+        <input type="submit" class="button" id="submitButton" value="Submit">
+        <input type="submit" class="button" id="retrieveButton" value="Retrieve">
+        <script type="module" src="./src/index.js"></script>
+      </div>
+
+      <div style="text-align: center" id="previousentries"></div>
+
     </div>
-  <div style="text-align: center" id="previousentries">
-  </div>
   </body>
 </html>
