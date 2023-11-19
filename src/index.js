@@ -1,30 +1,62 @@
 
 const submitButton = document.getElementById("submitButton");
 const retrieveButton = document.getElementById("retrieveButton");
+let currentMood = 0;
+for (let i = 1; i < 6;i++) {
+    console.log(i);
+    if (document.getElementById("mood" + i.toString())) {
+        document.getElementById("mood" + i.toString()).addEventListener("click", function() {
+            setMood(i);
+        });
+    }
+}
+
+function setMood(number) {
+    chrome.storage.local.set({ "currentMood": number }, function() {
+    });
+}
 
 if (submitButton) {
     submitButton.addEventListener("click", function() {
-        changeTextBox();
+        storeText();
     });
 }
 if (retrieveButton) {
     retrieveButton.addEventListener("click", function() {
-        makeTextboxDisappear();
+        chrome.storage.local.get("currentMood", function(object) {
+            alert(object.currentMood);
+            currentMood = object.currentMood;
+        });
     });
 }
 
-function changeTextBox() {
+function storeText() {
     const textBoxValue = document.getElementById("mhentry").value;
     let currentArray;
     chrome.storage.local.get("textboxStuff", function(object) {
+        currentArray = object.textboxStuff;
+        console.log(object.textboxStuff.length);
+    });
+    if (Array.isArray(currentArray)) {
+        currentArray.push({
+            mood: currentMood,
+            text: textBoxValue
+        });
+    } else {
+        currentArray = [
+            {
+                mood: currentMood,
+                text: textBoxValue
+            }
+        ];
+    }
+    console.log(currentArray);
 
-    });
-    chrome.storage.local.set({ "textboxStuff": textBoxValue }, function() {
-    });
+    chrome.storage.local.set({ "textboxStuff": currentArray }).then();
 
 }
 
-function getTextData() {
+function getTextData() { // needs updating
     chrome.storage.local.get("textboxStuff", function(object) {
         const allData = object.textboxStuff;
        document.getElementById("mhentry").value = object.textboxStuff;
