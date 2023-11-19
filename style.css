@@ -1,0 +1,47 @@
+body {
+    font-family: "Lexend Deca",sans-serif; font-size: 16px; color: #7d9f51;
+    background-color: #c0e196;
+    width: 400px;
+    height: 500px;
+    letter-spacing: 1px;
+}
+textarea {
+    width: 80%;
+    height: 40%;
+    padding: 8px 20px;
+    box-sizing: border-box;
+    border: 8px solid #7d9f51;
+    border-radius: 20px;
+    transition-duration: 0.5s;
+    outline: none;
+    font-family: "Lexend Deca", sans-serif;
+    font-size: 20px;
+}
+.button {
+    background-color: #7d9f51;
+    color: white;
+    border: 2px solid #7d9f51;
+    padding: 4px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-family: "Lexend Deca",sans-serif;
+    transition-duration: 0.4s;
+    border-radius: 16px;
+}
+.button:hover {
+    background-color: #c0e196;
+    color: black;
+}
+#journalentry {
+    opacity: 1;
+    transition-duration: 0.4s;
+    transition-timing-function: ease-in-out;
+}
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}

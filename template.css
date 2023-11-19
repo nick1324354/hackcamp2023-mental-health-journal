@@ -1,0 +1,66 @@
+body {
+    background-color: #C0E196;
+    font-family: lexend deca, sans-serif;
+    width: 400px;
+    height: 500px;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+ button {
+ }
+
+.container {
+    margin-top:20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 30px;
+}
+
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#title {
+    margin-top: 10px;
+    font-size: large;
+    font-family: lexend deca, sans-serif;
+    color:#7D9F51;
+}
+
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#mood-bar {
+    display: flex;
+    border-radius: 25px;
+    border: solid 2px #b3ca94;
+    background-color: #7D9F51;
+    list-style-type: none;
+}
+
+#text-prompt {
+    color: white;
+    font-size: 5vw;
+    margin-bottom: 10px;
+}
+
+.mood-emoji {
+    margin: 2.5px;
+}
+
+.mood-emoji-img {
+    margin:10px;
+    filter: invert(100%);
+}

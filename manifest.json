@@ -10,5 +10,10 @@
   },
   "permissions": [
     "storage"
-  ]
+  ],
+  "background": {
+    "type": "module",
+    "minimum_chrome_version": "92"
+
+  }
 }

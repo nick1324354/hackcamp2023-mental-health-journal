@@ -1,21 +1,41 @@
-import {chrome} from '@types/chrome';
 
-document.getElementById("submitButton").addEventListener("click", function() {
-    changeTextBox();
-});
-document.getElementById("retrieveButton").addEventListener("click", function() {
-    document.getElementById("mhentry").innerHTML = getTextData();
-});
+const submitButton = document.getElementById("submitButton");
+const retrieveButton = document.getElementById("retrieveButton");
+
+if (submitButton) {
+    submitButton.addEventListener("click", function() {
+        changeTextBox();
+    });
+}
+if (retrieveButton) {
+    retrieveButton.addEventListener("click", function() {
+        makeTextboxDisappear();
+    });
+}
+
 function changeTextBox() {
-    console.log(document.getElementById("mhentry").value);
-    chrome.storage.local.set({ "textboxStuff": "the contents!"}, function() {
-        alert("the storing has been done");
+    const textBoxValue = document.getElementById("mhentry").value;
+    let currentArray;
+    chrome.storage.local.get("textboxStuff", function(object) {
+
+    });
+    chrome.storage.local.set({ "textboxStuff": textBoxValue }, function() {
     });
 
 }
 
 function getTextData() {
-    return chrome.storage.local.get("textboxStuff", function() {
-       alert("the fetching has been done");
+    chrome.storage.local.get("textboxStuff", function(object) {
+        const allData = object.textboxStuff;
+       document.getElementById("mhentry").value = object.textboxStuff;
     });
+}
+
+function makeTextboxDisappear() {
+    document.querySelector("#journalentry").style.scale = "0.0";
+}
+
+function createDropDown() {
+    let dropdownContents = "<select></select>";
+    document.getElementById("previousentries").innerHTML = dropdownContents;
 }
