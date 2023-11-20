@@ -32,28 +32,20 @@ if (retrieveButton) {
 
 function storeText() {
     const textBoxValue = document.getElementById("mhentry").value;
-    let currentArray;
+    let currentObject;
+    const dateNow = Date.now().toString();
     chrome.storage.local.get("textboxStuff", function(object) {
-        currentArray = object.textboxStuff;
-        console.log(object.textboxStuff.length);
-    });
-    if (Array.isArray(currentArray)) {
-        currentArray.push({
+        currentObject = object.textboxStuff;
+        console.log(object);
+        currentObject[dateNow] = {
             mood: currentMood,
             text: textBoxValue
-        });
-    } else {
-        currentArray = [
-            {
-                mood: currentMood,
-                text: textBoxValue
-            }
-        ];
-    }
-    console.log(currentArray);
-
-    chrome.storage.local.set({ "textboxStuff": currentArray }).then();
-
+        };
+        console.log(Object.keys(currentObject));
+        const newDate = new Date(parseInt(Object.keys(currentObject)[0]));
+        console.log(newDate.toString());
+        chrome.storage.local.set({ "textboxStuff": currentObject }).then();
+    });
 }
 
 function getTextData() { // needs updating
