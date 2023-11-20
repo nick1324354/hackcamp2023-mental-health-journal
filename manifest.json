@@ -1,11 +1,11 @@
 {
-  "name": "Hello Extensions",
-  "description": "Base Level Extension",
+  "name": "MoodyMind",
+  "description": "A mental health journal to record your mood and thoughts.",
   "version": "1.0",
   "manifest_version": 3,
   "action": {
     "default_popup": "template.html",
-    "default_icon": "hello_extensions.png",
+    "default_icon": "assets/extension-logo.png",
     "scripts": [ "./src/index.js" ]
   },
   "permissions": [

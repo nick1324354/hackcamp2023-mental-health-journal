@@ -38,11 +38,19 @@ function storeText() {
     chrome.storage.local.get("textboxStuff", function(object) {
         currentObject = object.textboxStuff;
         console.log(object);
-
-        currentObject[dateNow] = {
-            mood: currentMood,
-            text: textBoxValue
-        };
+        if (currentObject) {
+            currentObject[dateNow] = {
+                mood: currentMood,
+                text: textBoxValue
+            };
+        } else {
+            currentObject = {};
+            currentObject[dateNow] = {
+                mood: currentMood,
+                text: textBoxValue
+            };
+        }
+        
         console.log(Object.keys(currentObject));
         const newDate = new Date(parseInt(Object.keys(currentObject)[0]));
         console.log(newDate.toString());
