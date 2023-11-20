@@ -13,6 +13,7 @@
     padding:5%;
     max-height: 40vw;
     color: white;
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
