@@ -5,6 +5,11 @@ body {
     height: 500px;
 }
 
+a {
+    text-decoration: none;
+    color: white;
+}
+
 ul {
     margin: 0;
     padding: 0;
@@ -47,6 +52,8 @@ ul {
     background: rgb(134,179,75);
     background: radial-gradient(circle, rgba(134,179,75,1) 10%, rgba(203,219,181,1) 55%);
 }
+
+
 #mood-bar {
     display: flex;
     border-radius: 25px;
