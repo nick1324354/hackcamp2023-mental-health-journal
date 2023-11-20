@@ -1,0 +1,10 @@
+#menu {
+    background-color: #7D9F51;
+    border-radius: 30px;
+    padding: 5%;
+    color: white;
+    list-style-type: none;
+    max-height: 60%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
