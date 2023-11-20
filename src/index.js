@@ -60,7 +60,7 @@ function makeTextboxDisappear() {
     document.querySelector("#journalentry").style.scale = "0.0";
 }
 
-function createDropDown() {
+function populateDropdown() {
     let dropdownContents = "<select></select>";
-    document.getElementById("previousentries").innerHTML = dropdownContents;
+
 }
