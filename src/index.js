@@ -18,15 +18,15 @@ function setMood(number) {
 
 if (submitButton) {
     submitButton.addEventListener("click", function() {
+        chrome.storage.local.get("currentMood", function(object) {
+            currentMood = object.currentMood;
+        });
         storeText();
     });
 }
 if (retrieveButton) {
     retrieveButton.addEventListener("click", function() {
-        chrome.storage.local.get("currentMood", function(object) {
-            alert(object.currentMood);
-            currentMood = object.currentMood;
-        });
+
     });
 }
 
