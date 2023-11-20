@@ -37,6 +37,7 @@ function storeText() {
     chrome.storage.local.get("textboxStuff", function(object) {
         currentObject = object.textboxStuff;
         console.log(object);
+
         currentObject[dateNow] = {
             mood: currentMood,
             text: textBoxValue

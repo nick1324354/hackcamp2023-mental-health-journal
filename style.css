@@ -3,7 +3,6 @@ body {
     background-color: #c0e196;
     width: 400px;
     height: 500px;
-    letter-spacing: 1px;
 }
 textarea {
     width: 80%;
@@ -16,6 +15,7 @@ textarea {
     outline: none;
     font-family: "Lexend Deca", sans-serif;
     font-size: 20px;
+    resize: none;
 }
 .button {
     background-color: #7d9f51;
