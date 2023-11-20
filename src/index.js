@@ -22,6 +22,7 @@ if (submitButton) {
             currentMood = object.currentMood;
         });
         storeText();
+        alert("Submitted!");
     });
 }
 if (retrieveButton) {
