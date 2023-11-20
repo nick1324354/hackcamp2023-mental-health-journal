@@ -10,9 +10,6 @@ ul {
     padding: 0;
 }
 
-button {
-}
-
 .container {
     margin-top:20%;
     display: flex;
@@ -46,8 +43,9 @@ button {
     padding-left: 10%;
     padding-right: 10%;
     border-radius: 10px;
+    border:#C0E196 outset 3.5px;
     background: rgb(134,179,75);
-    background: radial-gradient(circle, rgba(134,179,75,1) 10%, rgba(199,231,156,1) 55%);
+    background: radial-gradient(circle, rgba(134,179,75,1) 10%, rgba(203,219,181,1) 55%);
 }
 #mood-bar {
     display: flex;
